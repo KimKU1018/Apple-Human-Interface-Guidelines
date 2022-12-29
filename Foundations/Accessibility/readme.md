@@ -75,14 +75,12 @@
 앱이나 게임의 중요한 사용자 흐름 각각에 대해 voiceOver, Reduce Motion 또는 Large Text Size 와 같은 필요한 옵션 기능을 설정하고 흐름의 모든 작접을 어려움 없이 완료할 수 있는지 확인합니다. 발견한 문제를 해결한 후 다른 필요한 옵션 기능을 설정하고 사용자 흐름을 다시 실행합니다. 앱 또는 게임을 감사, 테스트 및 수정하는 데 도움이 되도록 Xcode의 필요한 옵션 검사기를 사용하는 것을 고려해 보십시오.
     
     > For example, a common user flow in a social media app might be “post a response to a comment.” The tasks that make up this flow could include:
-    > 
-    > 
-    > Read posted comments
-    > Choose a comment for a response
-    > Open the response view
-    > Edit the response
-    > Post the response
-    > 
+     Read posted comments
+     Choose a comment for a response
+     Open the response view
+     Edit the response
+     Post the response
+     
     > For each critical user flow in your app or game, turn on an accessibility feature, such as VoiceOver, Reduce Motion, or Large Text Size, and make sure that you can complete every task in the flow without difficulty. After you fix the problems you uncover, turn on a different accessibility feature and run through the user flow again. To help you audit, test, and fix your app or game, consider using Xcode’s Accessibility Inspector.
     >
     
