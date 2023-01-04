@@ -1,0 +1,6 @@
+## Content descriptions
+
+**의미를 전달하는 모든 이미지에 대한 대체 설명을 제공합니다.** 콘텐츠의 의미 있는 이미지를 설명하지 않으면 VoiceOver 사용자가 앱을 완전히 경험하지 못하게 됩니다. 유용한 설명을 만들려면 이미지를 볼 수 있는 사람에게 설명이 필요한 내용을 보고하는 것부터 시작하십시오. VoiceOver는 이미지와 캡션을 둘러싼 텍스트를 읽기 때문에 이미지 자체에서 전달되는 정보에 설명을 집중합니다.
+> **Provide alternative descriptions for all images that convey meaning.**
+ If you don’t describe the meaningful images in your content, you prevent VoiceOver users from fully experiencing your app. To create a useful description, start by reporting what would be self-explanatory to someone who is able to see the image. Because VoiceOver reads the text surrounding the image and any captions, focus your description on information that’s conveyed by the image itself.
+>
