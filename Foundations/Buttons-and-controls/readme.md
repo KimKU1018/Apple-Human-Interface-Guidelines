@@ -16,3 +16,5 @@
 > **Prefer the system-provided switch component.**
  SwiftUI provides a switch that indicates its state by the position of its knob and its fill color. For some people, however, the addition of labels makes it easier to perceive whether a switch is on or off. When you use system-provided switches, iOS, iPadOS, tvOS, and watchOS automatically displays on/off glyphs within them when people turn on On/Off Labels.
 >
+<img width="491" alt="22" src="https://user-images.githubusercontent.com/86593582/210487431-59981c10-4283-4c52-8e32-16126be97279.png">
+
