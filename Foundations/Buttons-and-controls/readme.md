@@ -18,3 +18,7 @@
 >
 <img width="491" alt="22" src="https://user-images.githubusercontent.com/86593582/210487431-59981c10-4283-4c52-8e32-16126be97279.png">
 
+**링크에 밑줄과 같은 색상 외에 시각적 표시기를 제공하는 것을 고려해 보십시오.** 색을 사용하여 연결을 식별하는 것은 좋지만, 색맹이나 인지적 또는 상황적 주의력 장애가 있는 사람들과 같은 사람들은 구별을 인식하지 못할 수도 있습니다.
+> **Consider giving links a visual indicator in addition to color, such as an underline.**
+ It’s fine to use color to identify a link, but if you use it as the only indicator, people — such as those with color blindness or cognitive or situational attention impairments — may not be able to perceive the distinction.
+>
