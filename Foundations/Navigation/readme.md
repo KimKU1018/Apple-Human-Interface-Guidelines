@@ -1,0 +1,31 @@
+## Navigation
+
+**VoiceOver 사용자가 모든 요소로 이동할 수 있는지 확인합니다.** VoiceOver는 화면 요소의 접근성 정보를 사용하여 사람들이 각 요소의 위치와 기능을 이해할 수 있도록 도와줍니다. 시스템에서 제공하는 UI 구성 요소에는 기본적으로 필요한 옵션 정보가 포함되어 있지만 VoiceOver는 사용자가 정보를 제공하지 않는 한 사용자 지정 요소를 검색하고 사용하는 데 도움이 되지 않습니다. 개발자 지침은 해당 문서를 참조하십시오.
+> **Make sure VoiceOver users can navigate to every element.**
+ VoiceOver uses accessibility information from onscreen elements to help people understand the location of each element and what it can do. System-provided UI components include this accessibility information by default, but VoiceOver can’t help people discover and use custom elements unless you provide the information. For developer guidance, see [Accessibility modifiers](https://developer.apple.com/documentation/swiftui/view-accessibility).
+
+**요소를 그룹화, 정렬 또는 연결하는 방법을 지정하여 VoiceOver 환경을 개선합니다.** 근접성, 정렬 및 기타 상황적 신호는 시각적인 사람들이 화면 요소 간의 관계를 인식하는 데 도움이 될 수 있지만, 이러한 신호는 VoiceOver 사용자에게 잘 작동하지 않습니다. 앱에서 요소 간의 관계가 시각적으로만 표시되는 위치를 확인하고 이러한 관계를 VoiceOver에 설명합니다.
+> **Improve the VoiceOver experience by specifying how elements should be grouped, ordered, or linked.**
+ Proximity, alignment, and other contextual cues can help sighted people perceive the relationships among onscreen elements, but these cues don’t work well for VoiceOver  users. Examine your app for places where relationships among elements are visual only,   and describe these relationships to VoiceOver.
+
+예를 들어, 아래의 레이아웃은 각 구가 위의 이미지에 대한 캡션임을 암시하기 위해 근접성과 중심에 의존합니다. 그러나 VoiceOver에 각 이미지를 문구와 함께 그룹화해야 한다고 말하지 않으면 VoiceOver는 "다양한 망고를 담는 큰 용기. 녹색 아티초크가 많이 들어 있는 큰 용기. 망고는 망기페라속에 속하는 나무들로부터 나옵니다. 아티초크는 엉겅퀴의 다양한 종에서 왔습니다." 라고 읽습니다. 이 문제는 VoiceOver가 기본적으로 요소를 위에서 아래로 읽기 때문에 발생합니다. 개발자 지침에 대한 문서를 해당 링크를 참조하세요.
+> For example, the layout below relies on proximity and centering to imply that each phrase is a caption for the image above it. However, if you don’t tell VoiceOver that each image should be grouped with its phrase, VoiceOver reads, “A large container holding a variety of mangoes. A large container holding many green artichokes. Mangoes come from trees that belong to the genus Mangifera. Artichokes come from a variety of a species of thistle.” This happens because VoiceOver reads elements from top to bottom by default. For developer guidance, see [shouldGroupAccessibilityChildren](https://developer.apple.com/documentation/objectivec/nsobject/1615143-shouldgroupaccessibilitychildren) and [accessibilityTitleUIElement](https://developer.apple.com/documentation/appkit/nsaccessibility/1535155-accessibilitytitleuielement?language=occ).
+
+<img width="493" alt="44" src="https://user-images.githubusercontent.com/86593582/210704839-2b5ef98e-49a3-491d-a032-c9f746bf55f9.png">
+
+**화면 내용 또는 레이아웃이 변경되면 VoiceOver에 알려줍니다.** 콘텐츠나 레이아웃의 예기치 않은 변경은 화면의 마인드 맵이 더 이상 정확하지 않다는 것을 의미하기 때문에 VoiceOver 사용자에게 매우 혼란스러울 수 있습니다. VoiceOver와 다른 보조 기술이 사람들이 화면에 대한 이해를 업데이트하는 데 도움이 될 수 있도록 화면 변화를 보고하는 것이 중요합니다. 개발자 지침은 해당 링크를 참조하십시오.
+> **Tell VoiceOver when onscreen content or layout changes.**
+An unexpected change in content or layout can be very confusing to VoiceOver users, because it means that their mental map of the screen is no longer accurate. It’s crucial to report onscreen changes so that VoiceOver and other assistive technologies can help people update their understanding of the screen. For developer guidance, see [UIAccessibility.Notification](https://developer.apple.com/documentation/uikit/uiaccessibility/notification) (UIKit) or [NSAccessibility.Notification](https://developer.apple.com/documentation/appkit/nsaccessibility/notification) (AppKit).
+
+**컨트롤이 다른 웹 페이지나 앱을 여는 시기를 예측할 수 있도록 도와줍니다.** 문맥의 예기치 않은 변화는 혼란을 야기할 수 있고 사람들이 갑자기 화면 환경에 대한 그들의 정신적 모델을 재구축해야 합니다. 문맥의 잠재적 변화에 주의를 끄는 한 가지 방법은 버튼 제목에 줄임표를 추가하는 것입니다. 시스템 전체에서 줄임표는 버튼이 다른 창이나 보기를 열어 사람들이 작업을 완료할 수 있도록 전달하는 표준 방법입니다. 예를 들어 iOS와 아이패드OS의 메일은 메시지 이동 버튼에 줄임표를 추가하여 사람들이 선택할 수 있는 목적지를 나열하는 별도의 보기가 열리는 것을 알립니다.
+> **Help people predict when a control opens a different webpage or app.**
+ An unexpected change in context can cause confusion and require people to suddenly rebuild their mental model of the onscreen environment. One way to draw attention to a potential change in context is append an ellipsis to a button’s title. Throughout the system, an ellipsis trailing the title is the standard way for a button to communicate that it opens another window or view in which people can complete the action. For example, Mail in iOS and iPadOS appends an ellipsis to the Move Message button, signaling that a separate view opens, listing the destinations people can choose.
+
+**모든 중요한 인터페이스 요소에 대한 대체 텍스트 레이블을 제공합니다.** 대체 텍스트 레이블은 화면에 표시되지 않지만 VoiceOver가 화면 요소를 청각적으로 설명할 수 있도록 하여 시각 장애인이 쉽게 탐색할 수 있도록 합니다. 시스템 제공 컨트롤에는 기본적으로 유용한 레이블이 있지만 사용자 지정 요소에 대한 레이블을 만들어야 합니다. 예를 들어, 사용자 지정 등급 단추를 나타내는 내게 필요한 옵션 요소를 만드는 경우 "요금" 레이블을 제공할 수 있습니다.
+> **Provide alternative text labels for all important interface elements.**
+ Alternative text labels aren’t visible onscreen, but they let VoiceOver audibly describe onscreen elements, making navigation easier for people with visual disabilities. System-provided controls have useful labels by default, but you need to create labels for custom elements. For example, if you create an accessibility element that represents a custom rating button, you might supply the label “Rate.”
+
+**필요한 경우 Voice Over 로터를 지지하십시오.** VoiceOver 사용자는 로터라는 화면 제어를 사용하여 제목, 링크 또는 기타 섹션 유형별로 문서 또는 웹 페이지를 탐색할 수 있습니다. 로터가 점자 키보드를 불러올 수도 있습니다. VoiceOver 사용자가 로터에서 해당 항목을 식별하여 앱의 관련 항목 사이를 탐색할 수 있도록 도와줄 수 있습니다. 개발자 지침은 해당 링크를 참조하십시오.
+> **Support the VoiceOver rotor when necessary.**
+ VoiceOver users can use an onscreen control called the *rotor* to navigate a document or webpage by headings, links, or other section types. The rotor can also bring up the braille keyboard. You can help VoiceOver users navigate among related items in your app by identifying these items to the rotor.                                                                                              For developer guidance, see [UIAccessibilityCustomRotor](https://developer.apple.com/documentation/uikit/uiaccessibilitycustomrotor) and [NSAccessibilityCustomRotor](https://developer.apple.com/documentation/appkit/nsaccessibilitycustomrotor).
+
